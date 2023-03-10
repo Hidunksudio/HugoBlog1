@@ -1,0 +1,14 @@
+{{ define "main" }}
+<section class="flex items-center h-full p-16">
+	<div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
+		<div class="max-w-md text-center">
+			<h2 class="mb-8 font-extrabold text-9xl dark:text-slate-600">
+				<span class="sr-only">OFFLINE</span>OFFLINE
+			</h2>
+			<p class="text-2xl font-semibold md:text-3xl">Maaf, kami tidak dapat menemukan halaman ini.</p>
+			<p class="mt-4 mb-8 dark:text-salte-400">Mungkin saja karena sudah dihapus atau belum dibuat. Coba hubungi admin untuk info lebih lanjut atau kembali ke Home.</p>
+			<a rel="noopener noreferrer" href="{{ .Site.BaseURL }}" class="px-8 py-3 font-semibold rounded bg-slate-800 text-slate-100 dark:bg-slate-400 dark:text-slate-900">Kembali ke Home</a>
+		</div>
+	</div>
+</section>
+{{ end }}

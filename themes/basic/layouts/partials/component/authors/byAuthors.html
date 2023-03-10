@@ -1,0 +1,6 @@
+<div class="flex items-center mt-1 text-slate-800 dark:text-slate-100">
+    <i class="icons8-checklis"></i>
+    <a href="{{ .Site.Params.linkProfile | absURL }}" class="text-sm ml-1 ">{{ .Params.author }}</a>
+    <span class=" mx-1 ">|</span>
+    <p class="opacity-50 text-xs">{{ .Date.Format "2006/01/02" }}</p>
+</div>

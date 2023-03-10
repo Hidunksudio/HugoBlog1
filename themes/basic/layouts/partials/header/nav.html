@@ -1,0 +1,12 @@
+<div class="dropdown">
+    <label tabindex="0" class="btn btn-circle btn-ghost bg-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" /> </svg>
+    </label>
+    <ul tabindex="0" class="menu divide-y divide-slate-300 bg-base-100 w-56 rounded-box dropdown-content mt-3 shadow bg_slate_50">
+        {{ range .Site.Menus.main }}
+        {{- $icon := printf "<i class=\"%s\"></i>" .Pre -}}
+        {{- $text := print $icon " " .Name | safeHTML -}}
+        <li><a href="{{ .URL | absURL }}" class="btn-ghost text_slate_800">{{ $text }}</a></li>
+        {{ end }}
+    </ul>
+</div>

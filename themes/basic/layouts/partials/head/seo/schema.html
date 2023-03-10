@@ -1,0 +1,59 @@
+{{ if .IsPage }}
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "headline": {{ .Title }},
+      "author": {
+        "@type": "Person",
+        "name": "{{ .Site.Title }}",
+        "url": "{{ .Site.Params.facebook }}"
+      },
+      "datePublished": "{{ .Date.Format "2006-01-02" }}",
+      "description": {{ .Description }},
+      "wordCount": {{ .WordCount }},
+      "mainEntityOfPage": "True",
+      "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
+      "image": {
+        "@type": "imageObject",
+        "url": "{{ .Site.BaseURL }}{{ .Params.thumbnail }}"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "{{ .Site.Title }}",
+        "logo": {
+          "@type": "imageObject",
+          "url": "{{ "img/logoSite.png" | absURL }}"
+        }
+      }
+    }
+</script>
+{{ else }}
+<script type="application/ld+json">{
+  "@context": "http://schema.org/",
+  "@type": "WebSite",
+  "name": "{{ .Title }}",
+  "alternateName": "{{ .Title }}",
+  "url": "{{ .Permalink }}", 
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ .Site.BaseURL }}search/?s={s}",
+    "query-input": "required name=s"
+  }
+}
+</script>
+<script type="application/ld+json">{
+    "@context": "http://schema.org/",
+    "@type": "Organization",
+    "name": "{{ .Title }}",
+    "alternateName": "{{ .Title }}",
+    "url": "{{ .Permalink }}",
+    "image": "{{ "img/logoSite.png" | absURL }}",
+    "sameAs": [
+        "{{ .Site.Params.facebook }}",
+        "{{ .Site.Params.twitter }}",
+        "{{ .Site.Params.github }}"
+    ]
+  }
+</script>
+{{ end }}

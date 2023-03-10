@@ -1,0 +1,67 @@
+.scrollhidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: scroll;
+}
+
+.scrollhidden::-webkit-scrollbar {
+    display: none;
+}
+
+.bg-btn {
+    background: #b5b5b54d;
+}
+
+img.imgs {
+    width: 7rem;
+    margin-right: 12px;
+}
+
+.text-limit-1-line {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.text-limit-2-line {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.searchCustom {
+    margin: 5rem 0;
+}
+
+.z-9999 {
+    z-index: 9999;
+}
+
+.bg_white {
+    background: #fff;
+}
+.bg_slate_50 {
+    background: #f8fafc;
+}
+
+.bg_slate_100 {
+    background: #f1f5f9;
+}
+
+.text_slate_800 {
+    color: #1e293b;
+}
+
+.text_slate_200 {
+    color: #f1f5f9;
+}
+
+.btn-ghost:hover{
+    background: rgba(255, 255, 255, 0);
+}

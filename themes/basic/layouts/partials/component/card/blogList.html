@@ -1,0 +1,15 @@
+<div class="mb-4 rounded-lg bg-white dark:bg-slate-800 shadow-md active:scale-95 active:shadow-sm transition-all hover:shadow-lg">
+    <div class="container p-4 mx-auto">
+        <div class="flex justify-between items-center">
+            <div class="w-4/5 pr-4">
+            {{ partial "component/authors/byAuthors.html" . }}
+            <a href="{{ .Permalink }}">
+                <h3 class="text-lg font-semibold tracking-tight line-clamp-2 leading-tight mb-1 text-limit-2-line">{{ .Params.title }}</h3>
+            </a>
+            </div>
+            {{ if .Params.thumbnail }}
+            <a href="{{ .Permalink }}"> <img class="w-16 h-16 lazyload rounded-2xl lazyloaded" src="{{ .Params.thumbnail | absURL }}" alt="{{ .Params.altimg }}" height="64" width="64"></a>
+            {{ end }}  
+        </div>
+    </div>
+</div>

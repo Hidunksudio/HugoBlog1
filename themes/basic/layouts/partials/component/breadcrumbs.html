@@ -1,0 +1,23 @@
+<div class="w-full text-base breadcrumbs dark:bg-slate-800 inline-block align-middle bg-white px-4 border-b dark:border-slate-700 border-slate-200">
+    <ul itemscope itemtype="https://schema.org/BreadcrumbList">
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a itemprop="item" href="{{ .Site.BaseURL }}">
+            <i class="w-4 h-4 mt-[1px] mr-2 icons8-home"></i>
+            <span itemprop="name">Home</span>
+        </a>
+        <meta itemprop="position" content="1" />
+      </li> 
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        {{ range (.GetTerms "categories") }}
+        <a  itemprop="item" href="{{ .Permalink }}"><i class="w-4 h-4 mt-[1px] mr-2 icons8-folder"></i>
+            <span itemprop="name">{{ .LinkTitle }}</span>
+        {{ end }}
+        </a>
+        <meta itemprop="position" content="2" />
+      </li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"> 
+      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name" class="mt-[-3px] pr-[16px]">{{ .Title }}</span>
+        <meta itemprop="position" content="3" />
+      </li>
+    </ul>
+</div>

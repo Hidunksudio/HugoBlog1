@@ -1,0 +1,3 @@
+{{ range .Site.Menus.footer2 }}
+    <a class="block" href="{{ .URL | absURL }}">{{ .Name }}</a> 
+{{ end }}

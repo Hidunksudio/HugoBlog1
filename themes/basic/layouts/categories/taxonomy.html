@@ -1,0 +1,67 @@
+{{ define "main" }}
+<div>
+  <p class="text-base uppercase font-bold">{{ .Site.Params.slugTitleCategory }}</p>
+  <h2 class="text-2xl md:text-3xl font-bold mb-2">{{ .Site.Params.listTitleCategory }}</h2>
+  <p class="text-lg mb-8 text-slate-500 dark:text-slate-300">{{ .Site.Params.subListtitleCategory }}</p>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <a href="{{ .Site.Params.catelink1 }}" class="inline-flex gap-4 p-4 shadow-md bg-white dark:bg-slate-800 rounded-md active:scale-95 active:shadow-sm transition-all hover:shadow-lg">
+      <div><img class="h-16 w-16" src="{{ .Site.Params.cateImg1 }}" alt="{{ .Params.title }}"></div>
+      <div>
+        <h3 class="font-medium line-clamp-1 mb-1">{{ .Site.Params.cateTitle1 }}</h3>
+        <p class="text-xs line-clamp-2 text-slate-700 dark:text-slate-300">{{ .Site.Params.cateDesc1 }}</p>
+      </div>
+    </a>
+    <a href="{{ .Site.Params.catelink2 }}" class="inline-flex gap-4 p-4 shadow-md bg-white dark:bg-slate-800 rounded-md active:scale-95 active:shadow-sm transition-all hover:shadow-lg">
+      <div><img class="h-16 w-16" src="{{ .Site.Params.cateImg2 }}" alt="{{ .Params.title }}"></div>
+      <div>
+        <h3 class="font-medium line-clamp-1 mb-1">{{ .Site.Params.cateTitle2 }}</h3>
+        <p class="text-xs line-clamp-2 text-slate-700 dark:text-slate-300">{{ .Site.Params.cateDesc1 }}</p>
+      </div>
+    </a>
+    <a href="{{ .Site.Params.catelink3 }}" class="inline-flex gap-4 p-4 shadow-md bg-white dark:bg-slate-800 rounded-md active:scale-95 active:shadow-sm transition-all hover:shadow-lg">
+      <div><img class="h-16 w-16" src="{{ .Site.Params.cateImg3 }}" alt="{{ .Params.title }}"></div>
+      <div>
+        <h3 class="font-medium line-clamp-1 mb-1">{{ .Site.Params.cateTitle3 }}</h3>
+        <p class="text-xs line-clamp-2 text-slate-700 dark:text-slate-300">{{ .Site.Params.cateDesc1 }}</p>
+      </div>
+    </a>
+    <a href="{{ .Site.Params.catelink4 }}" class="inline-flex gap-4 p-4 shadow-md bg-white dark:bg-slate-800 rounded-md active:scale-95 active:shadow-sm transition-all hover:shadow-lg">
+      <div><img class="h-16 w-16" src="{{ .Site.Params.cateImg4 }}" alt="{{ .Params.title }}"></div>
+      <div>
+        <h3 class="font-medium line-clamp-1 mb-1">{{ .Site.Params.cateTitle4 }}</h3>
+        <p class="text-xs line-clamp-2 text-slate-700 dark:text-slate-300">{{ .Site.Params.cateDesc1 }}</p>
+      </div>
+    </a>
+    <a href="{{ .Site.Params.catelink5 }}" class="inline-flex gap-4 p-4 shadow-md bg-white dark:bg-slate-800 rounded-md active:scale-95 active:shadow-sm transition-all hover:shadow-lg">
+      <div><img class="h-16 w-16" src="{{ .Site.Params.cateImg5 }}" alt="{{ .Params.title }}"></div>
+      <div>
+        <h3 class="font-medium line-clamp-1 mb-1">{{ .Site.Params.cateTitle5 }}</h3>
+        <p class="text-xs line-clamp-2 text-slate-700 dark:text-slate-300">{{ .Site.Params.cateDesc1 }}</p>
+      </div>
+    </a>
+    <a href="{{ .Site.Params.catelink6 }}" class="inline-flex gap-4 p-4 shadow-md bg-white dark:bg-slate-800 rounded-md active:scale-95 active:shadow-sm transition-all hover:shadow-lg">
+      <div><img class="h-16 w-16" src="{{ .Site.Params.cateImg6 }}" alt="{{ .Params.title }}"></div>
+      <div>
+        <h3 class="font-medium line-clamp-1 mb-1">{{ .Site.Params.cateTitle6 }}</h3>
+        <p class="text-xs line-clamp-2 text-slate-700 dark:text-slate-300">{{ .Site.Params.cateDesc1 }}</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div>
+    <div class="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 mt-10">
+        {{ $paginator := .Paginate .Pages.ByDate.Reverse 24 }}
+        {{ range $paginator.Pages }}
+            <div class="flex bg-white dark:bg-slate-800 transform flex-col overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
+                <div class="mb-auto p-2 text-center">
+                    <a href="{{ .Permalink }}" class="mb-2 inline-block text-lg transition duration-500 ease-in-out">
+                        {{ .Params.title }}
+                    </a>
+                </div>
+            </div>
+        {{ end }}
+    </div>
+</div>
+{{- partial "component/pagination.html" . -}}
+{{ end }}

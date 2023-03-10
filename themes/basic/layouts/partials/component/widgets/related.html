@@ -1,0 +1,23 @@
+<h2 class="md:text-xl text-lg font-bold mt-8">{{ .Site.Params.WidgettitleRalated }}</h2>
+<div class="carousel carousel-center space-x-4 cursor-ew-resize pb-6">
+  {{ $related := .Site.RegularPages.Related . | first 5 }}
+  {{ with $related }}
+  {{ range . }}
+  <div class="carousel-item w-72 bg-white dark:bg-slate-800 transform flex-col overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-lg my-4">
+    {{ if .Params.thumbnail }}
+    <a href="{{ .Permalink }}">
+      <img class="w-full h-auto" src="{{ .Params.thumbnail | absURL }}" alt="{{ .Params.altimg }}" />
+    </a>
+    {{ end }}
+    <div class="mb-auto p-5 sm:px-4 sm:py-2 md:px-6 md:py-4">
+      <div class="mb-0 sm:mb-2 md:mb-3"><a href="#" class="text-xs transition duration-500 ease-in-out">
+          {{ partial "component/tags.html" . }}
+        </a></div>
+      <a href="{{ .Permalink }}" class="mb-2 inline-block text-lg font-medium transition duration-500 ease-in-out">{{
+        .Params.title }}</a>
+      <p class="text-sm text-limit-1-line">{{ .Params.description }}</p>
+    </div>
+  </div>
+  {{ end }}
+  {{ end }}
+</div>

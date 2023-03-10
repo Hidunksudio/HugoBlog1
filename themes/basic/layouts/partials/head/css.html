@@ -1,0 +1,18 @@
+<!-- {{ $styles := resources.Get "css/style.css" | postCSS }}
+{{ if .Site.IsServer }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink | absURL  }}" />
+{{ else }}
+{{ $styles := $styles | minify | resources.PostProcess }}
+<link rel="stylesheet" href="{{ $styles.RelPermalink | absURL  }}" />
+{{ end }}
+
+{{ $daisyUI := resources.Get "css/daisyUI.css" }}
+{{ $app := resources.Get "css/app.css" }}
+{{ $concatCSS := slice $daisyUI $app | resources.Concat "css/bundle.css" | resources.Minify }}
+<link href="{{ $concatCSS.Permalink }}" rel="stylesheet" type="text/css" /> -->
+
+<link rel="stylesheet" href="{{"css/mix.css" | absURL}}">
+{{ $icomoon := resources.Get "css/icomoon.css" }}
+{{ $icon8 := resources.Get "css/icon8.css" }}
+{{ $iconCSS := slice $icomoon $icon8 | resources.Concat "css/iconbundle.css" | resources.Minify }}
+<link href="{{ $iconCSS.Permalink }}" rel="stylesheet" type="text/css" />

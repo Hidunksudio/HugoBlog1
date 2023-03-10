@@ -1,0 +1,100 @@
+<div class="w-full mb-8 flex flex-wrap gap-2">
+    <div class="mb-4 w-full md:w-1/2 lg:w-1/2">
+        {{ range first 1 (.Site.RegularPages.ByDate.Reverse) }}
+        <div class="md:pr-3 mb-6 w-full">
+            <div class="flex w-full h-full flex-wrap bg-white dark:bg-slate-800 shadow-md active:scale-95 active:shadow-sm transition-all hover:shadow-lg overflow-hidden rounded-lg">
+                {{ if .Params.thumbnail }}
+                <div class="w-2/6">
+                    <a href="{{ .Permalink }}"><img class="object-cover h-full w-full" src="{{ .Params.thumbnail }}" alt="{{ .Params.title }}"/></a>
+                </div>
+                {{ end }}
+                <div class="w-4/6 p-5">
+                    <h2 class="leading-normal text-lg font-bold"><a href="{{ .Permalink }}">{{ .Params.title }}</a></h2>
+                    <p class="opacity-50 truncate">{{ .Params.description }}</p>
+                    <div class="mt-16">
+                        {{ partial "component/authors/byAuthors.html" . }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+        {{ range first 1 (after 1 .Site.RegularPages.ByDate.Reverse) }}
+        <div class="md:pr-3 mb-6 w-full text-slate-100">
+            {{ if .Params.thumbnail }}
+            <div class="flex w-full h-full flex-col flex-wrap bg-cover bg-no-repeat bg-center p-5 shadow-md active:scale-95 active:shadow-sm transition-all hover:shadow-lg overflow-hidden rounded-lg"
+                style="background-image:url('{{ .Params.thumbnail }}')">
+            {{ end }}
+                <h2 class="text-lg mb-2 font-bold"><a href="{{ .Permalink }}">{{ .Params.title }}</a></h2>
+                <p class="opacity-50">{{ .Params.description }}</p>
+                <div class="flex flex-wrap justify-between items-center mt-auto pt-6">
+                    {{ partial "component/authors/byAuthors.html" . }}
+                </div>
+            </div>
+        </div>
+        {{ end }}
+        {{ range first 2 (after 2 .Site.RegularPages.ByDate.Reverse) }}
+        <div class="md:pr-3 mb-6 w-full">
+            <div class="flex w-full h-full flex-wrap bg-white dark:bg-slate-800 shadow-md active:scale-95 active:shadow-sm transition-all hover:shadow-lg overflow-hidden rounded-lg">
+                {{ if .Params.thumbnail }}
+                <div class="w-2/6">
+                    <a href="{{ .Permalink }}"><img class="object-cover h-full w-full" src="{{ .Params.thumbnail }}" alt="{{ .Params.title }}"/></a>
+                </div>
+                {{ end }}
+                <div class="w-4/6 p-5">
+                    <h2 class="leading-normal text-lg font-bold"><a href="{{ .Permalink }}">{{ .Params.title }}</a></h2>
+                    <p class="opacity-50 truncate">{{ .Params.description }}</p>
+                    <div class="mt-16">
+                        {{ partial "component/authors/byAuthors.html" . }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+        <div class="md:pr-3 my-6">
+            {{ partial "component/ads/ads80px.html" . }}
+        </div>
+        {{ range first 4 (after 4 .Site.RegularPages.ByDate.Reverse) }}
+        <div class="md:pr-3 mb-6 w-full">
+            <div class="flex w-full h-full flex-wrap bg-white dark:bg-slate-800 shadow-md active:scale-95 active:shadow-sm transition-all hover:shadow-lg overflow-hidden rounded-lg">
+                {{ if .Params.thumbnail }}
+                <div class="w-2/6">
+                    <a href="{{ .Permalink }}"><img class="object-cover h-full w-full" src="{{ .Params.thumbnail }}" alt="{{ .Params.title }}"/></a>
+                </div>
+                {{ end }}
+                <div class="w-4/6 p-5">
+                    <h2 class="leading-normal text-lg font-bold"><a href="{{ .Permalink }}">{{ .Params.title }}</a></h2>
+                    <p class="opacity-50 truncate">{{ .Params.description }}</p>
+                    <div class="mt-16">
+                        {{ partial "component/authors/byAuthors.html" . }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+        <div class="text-center mt-8">
+            <a href="{{ "/post/" | absURL }}" class="border border-gray-600 text-gray-600 px-4 py-2 rounded-full hover:bg-gray-600 hover:text-white">{{ .Site.Params.BtnLihatsemua }}</a>
+        </div>
+    </div>
+    <div class="mb-4 w-full md:w-[48%] lg:w-1/4">
+        <div class="sticky top-0">
+            <div class="mb-6">
+                {{ partial "component/ads/ads80px.html" . }}
+            </div>
+            {{ range first 1 (after 6 .Site.RegularPages.ByDate.Reverse ) }}
+            {{- partial "component/card/blogCard.html" . -}}
+            {{ end }}
+            <div class="mt-6">
+                {{ partial "component/ads/ads180px.html" . }}
+            </div>
+        </div>
+    </div>
+    <div class="mb-4 w-full px-2 lg:w-[23%] flex-nowrap">
+        <div class="sticky top-0">
+            <div class="mb-6">
+                {{ partial "component/ads/ads80px.html" . }}
+            </div>
+            {{ partial "component/widgets/popular.html" . }}  
+            {{ partial "component/widgets/category.html" . }}  
+        </div>
+    </div>
+</div>

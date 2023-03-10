@@ -1,0 +1,12 @@
+{{ $paginator := .Paginate (where (where .Site.RegularPages "Type" "post") ".Params.unlisted" "!=" "true").ByDate.Reverse }}
+<div class="lg:grid hidden mb-12 grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
+    {{ range $paginator.Pages }}
+    {{- partial "component/card/blogCard.html" . -}}
+    {{ end }}
+</div>
+<div class="lg:hidden">
+    {{ range $paginator.Pages }}
+    {{- partial "component/card/blogList.html" . -}}
+    {{ end }}
+  </div>
+{{- partial "component/pagination.html" . -}}

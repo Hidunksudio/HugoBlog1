@@ -1,0 +1,131 @@
+author = "Lorem Ipsum"
+titleHome = "Nama Blog : Ilmu Pengetahuan Tekonologi"
+description = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the dummy text ever since the 1500s industrs standard dummy text ever since the 1500s'
+thumbnail = "/img/logoSite.png"
+logo = "/img/logoSite.png"
+facebook = "https://facebook.com/rifai"
+twitter = "https://twitter.com/rifai"
+github = "https://github.com/rifai"
+
+frontBundle = "post"
+hideMeta = false
+truncate = true
+categoriesLimit = 8
+
+searchEngineURL = "https://www.google.com/search"
+googleAnalytics = "UA-XXXXX-X"
+disableGoogleFonts = false
+disableReadingTime = false
+
+#### HomePage Setting
+titleNewpost = "Artikel Terbaru"
+BtnLihatsemua = "Lihat Semua"
+
+#### Setting Widget
+WidgettitlePopular = "Most Popular"
+WidgettitleRalated = "Baca Juga ini"
+WidgettitleNewpost = "Artikel Terbaru"
+WidgettitleCategory = "Category"
+
+##### Singel Post Setting
+titleTOC = "Table Of Contents"
+titleShare = "Baca Artikel ini guys :"
+
+iconBreadcrumbs = "icon-home-smile-line"
+
+### floating
+floatingTooltip1 = ""
+floatingTooltip2 = "Table Of Contents"
+floatingTooltip3 = "Bagikan Sekarang"
+floatingTooltip4 = "Komentar"
+
+floatingIcon1 = ""
+floatingIcon2 = "icons8-literature"
+floatingIcon3 = "icons8-share"
+floatingIcon4 = "icons8-comments"
+
+##### Author List Setting
+
+titleSlugAuthors = "Author dan Mentor"
+titleAuthors = "Orang-orang di balik ..."
+subTitleAuthors = "Siapa saja penulis di ....?"
+
+AuthorImage = "/img/authors.gif"
+titleProfile = "Muhamad RIfai"
+subTitleProfile = "Founder of Petani Kode"
+linkProfile = "/authors/muhamadrifai/"
+BtnLinkProfile = "Lihat"
+
+#### Author Single Setting
+profileFollowers = "120 Followers"
+profileFollowing = "45 Following"
+
+navProffile1 = "Articles"
+navProffile2 = "Recommends"
+navProffile3 = "Subscriptions"
+
+#### Tags single Setting
+titleTags = "Tag yang kamu lihat :"
+subTitleTags = "Artikel yang terkait dengan"
+
+#### Tags list Setting
+slugtitleTags = "TAGS"
+listTitleTags = "Cari Tags yang kamu inginkan"
+subListtitleTags = "Jika kamu tidak menemukan tag yang dicari, kamu bisa minta kami untuk menambahkannya."
+
+#### Category single Setting
+titleCategory = "Category yang kamu lihat :"
+subTitleCategory = "Artikel yang terkait dengan"
+
+#### Category list Setting
+slugTitleCategory = "Category"
+listTitleCategory = "Semua Category"
+subListtitleCategory = "Paling banyak dibaca dan direkomendasikan admin."
+
+cateTitle1 = "Title 1"
+cateTitle2 = "Title 2"
+cateTitle3 = "Title 3"
+cateTitle4 = "Title 4"
+cateTitle5 = "Title 5"
+cateTitle6 = "Title 6"
+
+cateDesc1 = "Pelajari dasar-dasar Git untuk version control pada project dan kolaborasi dengan tim"
+cateDesc2 = "Pelajari dasar-dasar Git untuk version control pada project dan kolaborasi dengan tim"
+cateDesc3 = "Pelajari dasar-dasar Git untuk version control pada project dan kolaborasi dengan tim"
+cateDesc4 = "Pelajari dasar-dasar Git untuk version control pada project dan kolaborasi dengan tim"
+cateDesc5 = "Pelajari dasar-dasar Git untuk version control pada project dan kolaborasi dengan tim"
+cateDesc6 = "Pelajari dasar-dasar Git untuk version control pada project dan kolaborasi dengan tim"
+
+cateImg1 = "/img/html5.svg"
+cateImg2 = "/img/html5.svg"
+cateImg3 = "/img/html5.svg"
+cateImg4 = "/img/html5.svg"
+cateImg5 = "/img/html5.svg"
+cateImg6 = "/img/html5.svg"
+
+catelink1 = "#"
+catelink2 = "#"
+catelink3 = "#"
+catelink4 = "#"
+catelink5 = "#"
+catelink6 = "#"
+
+#### Footer Setting
+footerLogo = ""
+footerTitle = "LOGO"
+footerSubTitle = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries"
+
+footerTitle1 = "Resources"
+footerTitle2 = "Social"
+
+
+#### Notif Setting
+notifTitle = "Notifikasi"
+notifBadge = "New"
+
+## pesan notif
+pushNotif1 = "Pesan notif 1"
+pushNotif2 = "Pesan notif 1"
+pushNotif3 = "Pesan notif 1"
+pushNotif4 = "Pesan notif 1"
+pushNotif5 = "Pesan notif 1"

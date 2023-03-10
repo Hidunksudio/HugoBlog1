@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div>
+    <div class="mb-3">
+        <p class="text-base font-bold">{{ .Site.Params.slugtitleTags }}</p>
+        <h1 class="text-2xl md:text-3xl font-bold mb-2"> {{ .Site.Params.listTitleTags }} </h1>
+        <p class="text-lg"> {{ .Site.Params.subListtitleTags }} </p>
+    </div>
+    <div class="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 mt-10">
+        {{ $paginator := .Paginate .Pages.ByDate.Reverse 24 }}
+        {{ range $paginator.Pages }}
+            <div class="flex bg-white dark:bg-slate-800 transform flex-col overflow-hidden rounded-xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
+                <div class="mb-auto p-2 text-center">
+                    <a href="{{ .Permalink }}" class="mb-2 inline-block text-lg transition duration-500 ease-in-out">
+                        {{ .Params.title }}
+                    </a>
+                </div>
+            </div>
+        {{ end }}
+    </div>
+</div>
+{{- partial "component/pagination.html" . -}}
+{{ end }}

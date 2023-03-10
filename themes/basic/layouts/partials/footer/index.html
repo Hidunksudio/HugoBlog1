@@ -1,0 +1,45 @@
+<footer>
+   <div class="flex flex-col mx-auto max-w-[1500px]">
+     <div class="flex lg:items-center lg:justify-between flex-col lg:flex-row gap-y-[45px] py-[30px] lg:py-0 px-[15px] sm:px-[30px] md:px-[40px] lg:px-[50px] xl:px-[75px] h-auto lg:h-[300px] bg-slate-800 ">
+       <div class="lg:w-full lg:pr-5">
+         <div class="flex items-center justify-center gap-x-[8px] mb-[30px] text-slate-300">
+           <i class="{{ .Site.Params.footerLogo }}"></i>{{ .Site.Params.footerTitle }}
+         </div>
+         <div class="text-center text-slate-200">{{ .Site.Params.footerSubTitle }}</div>
+       </div>
+       <div class="flex justify-center sm:justify-between flex-wrap lg:flex-nowrap gap-y-[60px] gap-x-[90px] sm:gap-x-0 m-auto md:w-2/6 lg:w-1/4">
+         <div class="text-center sm:text-left">
+           <div class="mb-[18px] text-slate-300 text-sm font-bold select-none">{{ .Site.Params.footerTitle1 }}</div>
+           <ul class="flex flex-col gap-[10px] text-slate-200">
+               {{ partial "footer/nav1.html" . }}
+           </ul>
+         </div>
+         <div class="text-center sm:text-left">
+           <div class="mb-[18px] text-slate-300 text-sm font-bold select-none">{{ .Site.Params.footerTitle2 }}</div>
+           <ul class="flex flex-col gap-[10px] text-slate-200">
+             {{ partial "footer/nav2.html" . }}
+           </ul>
+         </div>
+       </div>
+     </div>
+     <div class="flex items-center justify-evenly sm:justify-between flex-col sm:flex-row sm:px-[30px] md:px-[40px] lg:px-[50px] xl:px-[75px] w-full lg:h-[50px] h-[80px] bg-slate-200">
+       <div class="text-slate-600">&copy; {{ now.Format "2006"}} <a href="{{.Site.BaseURL}}">{{ .Site.Title }}</a> | Didukung oleh <a href="https://gohugo.io/" class="font-bold" target="blank">Hugo</a></div>
+       <ul class="flex gap-[15px] text-slate-600 cursor-pointer">
+         <li class="ease-in duration-200 hover:text-slate-400">
+           <a href="{{ .Site.Params.twitter }}" target="_blank" rel='noreferrer'><i class="icons8-twitter"></i></a>
+         </li>
+         <li class="ease-in duration-200 hover:text-slate-400">
+           <a href="{{ .Site.Params.linkedin }}" target="_blank" rel='noreferrer'><i class="icons8-linkedin"></i></a>
+         </li>
+         <li class="ease-in duration-200 hover:text-slate-400">
+           <a href="{{ .Site.Params.facebook }}" target="_blank" rel='noreferrer'><i class="icons8-facebook"></i></a>
+         </li>
+         <li class="ease-in duration-200 hover:text-slate-400">
+           <a href="{{ .Site.Params.github }}" target="_blank" rel='noreferrer'><i class="icons8-github"></i></a>
+         </li>
+       </ul>
+     </div>
+   </div>
+</footer>
+    
+   {{ partialCached "footer/script/index.html" . }}

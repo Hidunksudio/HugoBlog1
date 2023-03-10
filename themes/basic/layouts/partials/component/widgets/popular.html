@@ -1,0 +1,4 @@
+<h2 class="mb-4 text-lg md:text-xl font-bold">{{ .Site.Params.WidgettitlePopular }}</h2>
+{{ range first 4 (where (where .Site.RegularPages "Type" "post") ".Params.unlisted" "!=" "true").ByTitle.Reverse }}
+{{ partial "component/card/blogList.html" . }}
+{{ end }}

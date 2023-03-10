@@ -1,0 +1,43 @@
+{{ define "main" }}
+<div>
+  <div class="grid grid-cols-4 md:grid-cols-12">
+    <div class="col-span-4 md:col-span-8">
+      {{ if .Params.thumbnail }}
+      <figure>
+        <img class="w-full h-auto md:h-96 rounded-t-xl" src="{{ .Params.thumbnail | absURL }}" alt="{{ .Params.altimg }}">
+      </figure>
+      {{ end }}
+      {{ partial "component/breadcrumbs.html" . }}
+      <div>
+      <article id="top" class="wysiwyg wysiwyg-slate dark:wysiwyg-invert mt-60px rounded-b-xl 
+          dark:bg-slate-800 bg-white transition-colors max-w-none shadow-md p-4 md:py-6 lg:py-8 xl:pb-16 md:px-6 lg:px-8 xl:px-16 relative">
+        <div class="not-wysiwyg"> 
+              {{ partial "component/authors/byAuthors.html" . }}
+            <h1 class="text-2xl md:text-3xl font-bold mb-2 mt-1 dark:text-slate-100 text-slate-800 pb-3 border-b dark:border-slate-700 border-slate-200">{{ .Title }}</h1>
+            {{ partial "component/tags.html" . }}
+        </div>
+        {{ .Content }}
+      </article>
+        {{ partial "component/floating/index.html" . }}
+        <div class="divscroll"></div>
+        {{ partial "component/widgets/related.html" . }}
+        {{ partial "component/ads/ads80px.html" . }}
+        {{ partial "component/disqus.html" . }}
+      </div>
+    </div>
+    <aside class="md:px-8 md:pl-4 md:pr-0 lg:pl-8 lg:pr-0 mt-8 md:mt-0 col-span-4 md:col-span-4">
+     <!-- {{ partial "component/widgets/newsletter.html" . }} -->
+      <div class="lg:grid hidden">
+        {{ partial "component/widgets/category.html" . }}
+      </div>
+      <div class="sticky top-0">
+      <div class="mb-8 lg:block hidden">
+        {{ partial "component/ads/ads80px.html" . }}
+      </div>
+      {{ partial "component/widgets/newpost.html" . }}
+      {{ partial "component/ads/ads180px.html" . }}
+      </div>
+    </aside>
+  </div>
+</div>
+{{ end }}

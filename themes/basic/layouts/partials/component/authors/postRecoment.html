@@ -1,0 +1,10 @@
+<div class="lg:grid hidden mb-12 grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
+{{ range first 8 (where (where .Site.RegularPages "Type" "post") ".Params.unlisted" "!=" "true").ByTitle.Reverse }}
+    {{- partial "component/card/blogCard.html" . -}}
+{{ end }}
+</div>
+<div class="lg:hidden">
+    {{ range first 8 (where (where .Site.RegularPages "Type" "post") ".Params.unlisted" "!=" "true").ByTitle.Reverse }}
+    {{- partial "component/card/blogList.html" . -}}
+    {{ end }}
+</div>

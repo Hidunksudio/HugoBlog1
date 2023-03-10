@@ -1,0 +1,45 @@
+[[main]]
+    identifier = "home" 
+    name = "Home"
+    pre = "c-icon icon-home-smile-line"
+    url = "/"
+    weight = 1
+[[main]]
+    identifier = "category" 
+    name = "Category"
+    pre = "c-icon icon-bookmark-line"
+    url = "/categories"
+    weight = 2
+[[main]]
+    identifier = "forum" 
+    name = "Forum"
+    pre = "c-icon icon-briefcase-line"
+    url = "/forum"
+    weight = 3
+
+[[footer1]]
+  identifier = "contact" 
+  name = "Contact"
+  url = "/contact"
+  weight = 1
+[[footer1]]
+  identifier = "about" 
+  name = "About"
+  url = "/about"
+  weight = 2
+[[footer1]]
+  identifier = "artikel" 
+  name = "Artikel"
+  url = "/post"
+  weight = 3
+
+[[footer2]]
+  identifier = "disclaimer" 
+  name = "Disclaimer"
+  url = "/disclaimer"
+  weight = 1
+[[footer2]]
+  identifier = "privacypolicy" 
+  name = "Privacy Policy"
+  url = "/privacypolicy"
+  weight = 2

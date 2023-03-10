@@ -1,0 +1,32 @@
+baseURL = 'https://rfyz.netlify.app'
+description = 'description Home'
+title = 'Default Title'
+theme = 'basic'
+images = '/img/logoSite.png'
+
+languageCode = "id-ID"
+DefaultContentLanguage = "id"
+
+enableRobotsTXT = true
+paginate = 8
+
+disqusShortname = 'imrifai'
+
+[build]
+  writeStats = true
+
+[outputs]
+  home = [ "HTML", "JSON", "RSS"]
+
+[taxonomies]
+    tag = "tags"
+    author = "authors"
+    category = "categories"
+
+[permalinks]
+    post = "/:slug/"
+    
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5

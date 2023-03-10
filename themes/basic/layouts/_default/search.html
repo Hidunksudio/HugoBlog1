@@ -1,0 +1,37 @@
+{{ define "main" }}
+<div class="md:w-9/12 w-full m-auto">
+    <div class="p-4 bg-white dark:bg-slate-800 rounded-md shadow-lg">
+        <form action="{{ "search" | absURL }}">
+            <input id="search-query" name="s" type="text" placeholder="Ketik lalu enter" class="bg_white text_slate_800 input input-bordered input-md placeholder:italic placeholder:text-slate-400 block w-full border border-slate-300" />
+        </form>
+        <div id="search-results">
+        </div>
+    </div>
+</div>
+<!-- this template is sucked in by search.js and appended to the search-results div above. So editing here will adjust style -->
+<script id="search-result-template" type="text/x-js-template">
+    <div id="summary-${key}">
+        <div>
+            <a href="${link}" title="${title}">
+                <div class="flex justify-between items-center gap-2 p-4 hover:bg-slate-100 dark:hover:bg-slate-700 active:scale-95 transition-all">
+                    <div>
+                        <h3 class="text-lg font-semibold tracking-tight line-clamp-2 leading-tight mb-1">${title}</h3>
+                        <p class="text-sm text-slate-700 dark:text-slate-200 line-clamp-1">${snippet}</p>
+                    </div>
+                    ${ isset thumbnail }<img class="w-16 h-16 lazyload rounded lazyloaded" src="${thumbnail }" alt="{{ .Params.title }}" height="64" width="64">${ end }
+                </div>
+            </a>
+        </div>
+    </div>
+</script>
+
+{{ $jquary := resources.Get "js/jquery.min.js" }}
+{{ $fuse := resources.Get "js/fuse.min.js" }}
+{{ $mark := resources.Get "js/mark.min.js" }}
+{{ $concatjs := slice $jquary $fuse $mark | resources.Concat "js/bundle.js" | resources.Minify }}
+<script type="text/javascript" src="{{ $concatjs.Permalink }}" defer></script>
+
+{{ $search := resources.Get "js/search.js" }}
+{{ $searchJS := $search | resources.Minify }}
+<script type="text/javascript" src="{{ $searchJS.Permalink }}" defer></script>
+{{ end }}

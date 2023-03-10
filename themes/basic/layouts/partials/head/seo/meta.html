@@ -1,0 +1,23 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="url" content="{{ .Permalink }}" />
+
+<title>{{ if .IsHome }}{{ .Site.Params.titleHome }}{{ else if .IsPage }}{{ .Title }} - {{ site.Title }}{{ else if not .IsPage }}{{ .Title }} - {{ site.Title }}{{ end }}</title>
+<meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Params.titleHome }}{{ else if .IsPage }}{{ .Title }} - {{ site.Title }}{{ else if not .IsPage }}{{ .Title }} - {{ site.Title }}{{ end }}">
+<meta property="og:site_name" content="{{ .Site.Params.titleHome }}">
+<meta property="og:locale" content="{{ .Language.Lang }}" />
+<meta property='fb:app_id' content='625183305657708'/>
+<meta property="og:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}">
+<meta property="og:image" content="{{ if .IsHome }}{{ .Site.Params.thumbnail | absURL }}{{ else if .IsPage }}{{ .Params.thumbnail | absURL }}{{ else if not .IsPage }}{{ .Params.thumbnail | absURL }}{{ end }}"> 
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ .Permalink }}">
+<meta property="twitter:title" content="{{ if .IsHome }}{{ .Site.Params.titleHome }}{{ else if .IsPage }}{{ .Title }} - {{ site.Title }}{{ else if not .IsPage }}{{ .Title }} - {{ site.Title }}{{ end }}">
+<meta property="twitter:description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}">
+<meta property="twitter:image" content="{{ if .IsHome }}{{ .Site.Params.thumbnail | absURL }}{{ else if .IsPage }}{{ .Params.thumbnail | absURL }}{{ else if not .IsPage }}{{ .Params.thumbnail | absURL }}{{ end }}">

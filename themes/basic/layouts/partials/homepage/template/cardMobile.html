@@ -1,0 +1,22 @@
+<h2 class="text-lg md:text-xl font-bold mb-4">{{ .Site.Params.titleNewpost }}</h2>
+{{ range first 3 (.Site.RegularPages.ByDate.Reverse) }}
+{{ partial "component/card/blogList.html" . }}
+{{ end }}
+<div class="mb-4">
+    {{ partial "component/ads/ads80px.html" . }}
+</div>
+{{ range first 1 (after 3 .Site.RegularPages.ByDate.Reverse) }}
+{{ partial "component/card/blogCardFullimg.html" . }}
+{{ end }}
+{{ range first 2 (after 3 .Site.RegularPages.ByDate.Reverse) }}
+{{ partial "component/card/blogList.html" . }}
+{{ end }}
+<div class="mb-4">
+    {{ partial "component/ads/ads80px.html" . }}
+</div>
+{{ range first 3 (after 5 .Site.RegularPages.ByDate.Reverse) }}
+{{ partial "component/card/blogList.html" . }}
+{{ end }}
+<div class="text-center mt-8">
+    <a href="{{ "/post/" | absURL }}" class="border border-gray-600 text-gray-600 px-4 py-2 rounded-full hover:bg-gray-600 hover:text-white">{{ .Site.Params.BtnLihatsemua }}</a>
+</div>

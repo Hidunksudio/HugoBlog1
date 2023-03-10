@@ -1,0 +1,19 @@
+{{ define "main" }}
+{{ $paginator := .Paginate .Pages.ByDate.Reverse 8 }}
+<div>
+    <p class="text-base font-bold"><a href="{{ "/categories/" | relLangURL }}" class="underline uppercase">Category</a> > <a href="#" class="uppercase">{{ .Title }}</a></p>
+    <h1 class="text-2xl md:text-3xl font-bold mb-2"> {{ .Site.Params.titleCategory }} {{ .Title }}</h1>
+    <p class="text-lg mb-10"> {{ .Site.Params.subTitleCategory }} <span class="font-bold underline decoration-wavy">#{{ .Title }}</span></p>
+    <div class="lg:grid hidden grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
+        {{ range $paginator.Pages }}
+        {{ partial "component/card/blogCard.html" . }}
+        {{ end }}
+    </div>
+    <div class="lg:hidden">
+        {{ range $paginator.Pages }}
+        {{ partial "component/card/blogList.html" . }}
+        {{ end }}
+    </div>
+</div>
+{{- partial "component/pagination.html" . -}}
+{{ end }}

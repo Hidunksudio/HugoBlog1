@@ -1,0 +1,16 @@
+<div class="md:pr-3 mb-6 w-full">
+    <div class="flex w-full h-full flex-wrap bg-white dark:bg-slate-800 shadow-md active:scale-95 active:shadow-sm transition-all hover:shadow-lg overflow-hidden rounded-lg">
+        {{ if .Params.thumbnail }}
+        <div class="w-2/6">
+            <a href="{{ .Permalink }}"><img class="object-cover h-full w-full" src="{{ .Params.thumbnail }}" alt="{{ .Params.title }}"/></a>
+        </div>
+        {{ end }}
+        <div class="w-4/6 p-5">
+            <h3 class="leading-normal text-lg font-bold"><a href="{{ .Permalink }}">{{ .Params.title }}</a></h3>
+            <p class="opacity-50 truncate">{{ .Params.description }}</p>
+            <div class="mt-16">
+                {{ partial "component/authors/byAuthors.html" . }}
+            </div>
+        </div>
+    </div>
+</div>
